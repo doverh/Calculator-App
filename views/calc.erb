@@ -6,41 +6,80 @@
 </head>
 <body>
 <center>
+
+
 <div id="calculator">
 	<!-- Screen and clear key -->
-	<div class="top">
-		<span class="clear">C</span>
-	<div><input type="text" id="result" size="20"></div>
+	<div class="top" >
+	<form id="myForm" method="post" action ="/"  >
+	<span><input type="button" class="clear" onclick="clean()" value="    C    "> </span>
+	<input type="text" name ="express" class="screen"  id="display" size="15" value= <%=@result%>>
+	<br>
 </div>
+	<br>
+
+	<br>
+
+
+</br>
 
 	<div class="keys">
 		<!-- operators and other keys -->
-	<div id = "keys"><span><input type="button" value="7" name="no" onclick="moveNumbers(this.value)"></span></div>  
+	<div id = "keys"><span><input type="button" class="numbers" value="7" name="no" onclick="moveNumbers(this.value)"></span></div>  
 
-	<span><input type="button" value="8" name="no" onclick="moveNumbers(this.value)"></span>
-	<span><input type="button" value="9" name="no" onclick="moveNumbers(this.value)"></span>
-		<span class="operator">+</span>
-		<span><input type="button" value="4" name="no" onclick="moveNumbers(this.value)"></span>
-		<span><input type="button" value="5" name="no" onclick="moveNumbers(this.value)"></span>
-		<span><input type="button" value="6" name="no" onclick="moveNumbers(this.value)"></span>
-		<span class="operator">-</span>
-		<span><input type="button" value="1" name="no" onclick="moveNumbers(this.value)"></span>
-		<span><input type="button" value="2" name="no" onclick="moveNumbers(this.value)"></span>
-		<span><input type="button" value="3" name="no" onclick="moveNumbers(this.value)"></span>
-		<span class="operator">÷</span>
-		<span><input type="button" value="0" name="no" onclick="moveNumbers(this.value)"></span>
-		<span>.</span>
-		<span class="eval">=</span>
-		<span class="operator">x</span> 
+	<span><input type="button" value="8" class="numbers"  name="no" onclick="moveNumbers(this.value)"></span>
+	
+	<span><input type="button" value="9" class="numbers" name="no" onclick="moveNumbers(this.value)"></span>
+	
+	<span><input type="button" value="+" class="operator" name="no" onclick="moveNumbers(this.value)"></span>
+	
+	<span><input type="button" value="4" class="numbers" name="no" onclick="moveNumbers(this.value)"></span>
+	
+	<span><input type="button" value="5"class="numbers" name="no" onclick="moveNumbers(this.value)"></span>
+	
+	<span><input type="button" value="6" class="numbers" name="no" onclick="moveNumbers(this.value)"></span>
+	
+	<span><input type="button" value="-" class="operator" name="no" onclick="moveNumbers(this.value)"></span>
+	
+	<span><input type="button" value="1" class="numbers"  name="no" onclick="moveNumbers(this.value)"></span>
+	
+	<span><input type="button" value="2" class="numbers"  name="no" onclick="moveNumbers(this.value)"></span>
+	
+	<span><input type="button" value="3" class="numbers" name="no" onclick="moveNumbers(this.value)"></span>
+	
+	<span><input type="button" value="/" class="operator"  name="no" onclick="moveNumbers(this.value)"></span>
+	
+	<span><input type="button" value="0" class="numbers" name="no" onclick="moveNumbers(this.value)"></span>
+	
+	<span><input type="button" value="." class="numbers" name="no" onclick="moveNumbers(this.value)"></span>
+	
+	<span><input type="submit" value="=" class="final"></span>
+	
+	<span><input type="button" class="operator" value="*" name="no" 
+	onclick="moveNumbers(this.value)"></span> 
+	
 	</div>
+</form>
 </div>
 
 </center>
-<script> function moveNumbers(num) { 
-    var txt=document.getElementById("result").value; 
-    txt=txt + num; 
-    document.getElementById("result").value=txt; 
-    } 
+
+<script> 
+	function moveNumbers(num) { 
+    	var txt=document.getElementById("display").value; 
+    	txt=txt + num; 
+    	document.getElementById("display").value=txt; 
+    }
+function clean() {
+    document.getElementById("display").value="";
+}
+
+ // function result(){
+ // 	total = <%= @result%>
+ // 	document.getElementById("display").value = total;
+ // }
+
+   
 </script>
 
 </body>
